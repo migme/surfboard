@@ -1,0 +1,32 @@
+{
+  "name": "surfboard",
+  "version": "1.0.0",
+  "description": "Widget to embed Migme in web apps",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/migme/surfboard.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/migme/surfboard/issues"
+  },
+  "homepage": "https://github.com/migme/surfboard",
+  "devDependencies": {
+    "babel": "npm:babel-core@^5.0.12",
+    "babel-runtime": "npm:babel-runtime@^5.0.12",
+    "core-js": "npm:core-js@^0.8.1"
+  },
+  "jspm": {
+    "directories": {},
+    "devDependencies": {
+      "babel": "npm:babel-core@^5.0.12",
+      "babel-runtime": "npm:babel-runtime@^5.0.12",
+      "core-js": "npm:core-js@^0.8.1"
+    }
+  }
+}
