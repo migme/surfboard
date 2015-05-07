@@ -15,10 +15,12 @@ System.config({
 
 System.config({
   "map": {
-    "babel": "npm:babel-core@5.1.11",
-    "babel-runtime": "npm:babel-runtime@5.1.11",
-    "core-js": "npm:core-js@0.8.4",
-    "migme": "npm:migme@0.2.3",
+    "babel": "npm:babel-core@5.2.16",
+    "babel-runtime": "npm:babel-runtime@5.2.16",
+    "core-js": "npm:core-js@0.9.6",
+    "html": "github:systemjs/plugin-text@0.0.2",
+    "migme": "npm:migme@0.3.0",
+    "webcomponents.js": "npm:webcomponents.js@0.6.1",
     "github:jspm/nodelibs-path@0.1.0": {
       "path-browserify": "npm:path-browserify@0.0.0"
     },
@@ -28,7 +30,7 @@ System.config({
     "npm:asap@1.0.0": {
       "process": "github:jspm/nodelibs-process@0.1.1"
     },
-    "npm:core-js@0.8.4": {
+    "npm:core-js@0.9.6": {
       "process": "github:jspm/nodelibs-process@0.1.1"
     },
     "npm:localforage@1.2.2": {
@@ -36,13 +38,9 @@ System.config({
       "process": "github:jspm/nodelibs-process@0.1.1",
       "promise": "npm:promise@5.0.0"
     },
-    "npm:migme@0.2.2": {
+    "npm:migme@0.3.0": {
       "localforage": "npm:localforage@1.2.2",
-      "uri-template-lite": "npm:uri-template-lite@0.1.11"
-    },
-    "npm:migme@0.2.3": {
-      "localforage": "npm:localforage@1.2.2",
-      "uri-template-lite": "npm:uri-template-lite@0.1.11"
+      "url-template": "npm:url-template@2.0.6"
     },
     "npm:path-browserify@0.0.0": {
       "process": "github:jspm/nodelibs-process@0.1.1"
@@ -50,8 +48,8 @@ System.config({
     "npm:promise@5.0.0": {
       "asap": "npm:asap@1.0.0"
     },
-    "npm:uri-template-lite@0.1.11": {
-      "systemjs-json": "github:systemjs/plugin-json@0.1.0"
+    "npm:webcomponents.js@0.6.1": {
+      "process": "github:jspm/nodelibs-process@0.1.1"
     }
   }
 });
