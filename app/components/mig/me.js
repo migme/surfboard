@@ -1,18 +1,15 @@
 import Migme from 'migme'
-import template from './me.html!'
+import MigButton from 'app/components/mig/button'
+import html from 'app/templates/mig/me.html!'
 
 class Me extends HTMLElement {
   createdCallback () {
-    this.migme = new Migme()
     let root = this.createShadowRoot()
-    root.innerHTML = template
-    for (let element of root.querySelectorAll('button')) {
-      element.addEventListener('click', event => {
-        const suffix = /.*_(.*)/
-        const method = event.target.id.replace(suffix, '$1')
-        this.migme.Session.login(method)
-      })
-    }
+    root.innerHTML = html
+
+    this.migme = new Migme()
+
+    this.appendChild(new MigButton())
   }
 }
 
