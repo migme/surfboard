@@ -9,6 +9,11 @@ class Me extends HTMLElement {
 
     this.migme = new Migme()
 
+    this.style.display = 'inline-block'
+    this.style.position = 'fixed'
+    this.style.bottom = '20px'
+    this.style.right = '20px'
+
     this.appendChild(new MigButton())
   }
 }

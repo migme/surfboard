@@ -1,3 +1,4 @@
+import MigMenu from 'app/components/mig/menu'
 import html from 'app/templates/mig/button.html!'
 
 class Button extends HTMLElement {
@@ -7,7 +8,7 @@ class Button extends HTMLElement {
 
     root.querySelector('button')
       .addEventListener('click', event => {
-        console.log('login!')
+        document.body.appendChild(new MigMenu())
       })
   }
 }
