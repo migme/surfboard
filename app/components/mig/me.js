@@ -1,6 +1,6 @@
 import Migme from 'migme'
-import MigButton from 'app/components/mig/button'
-import html from 'app/templates/mig/me.html!'
+// import MigButton from './button'
+import html from '../../templates/mig/me.jade'
 
 class Me extends HTMLElement {
   createdCallback () {
