@@ -1,6 +1,7 @@
-import Migme from 'migme'
+// import Migme from 'migme'
 // import MigButton from './button'
-import html from '../../templates/mig/me.jade'
+import css from '../../styles/mig/me.css'
+// import html from '../../templates/mig/me.jade'
 
 class Me extends HTMLElement {
   createdCallback () {
@@ -9,10 +10,10 @@ class Me extends HTMLElement {
 
     this.migme = new Migme()
 
-    this.style.display = 'inline-block'
-    this.style.position = 'fixed'
-    this.style.bottom = '20px'
-    this.style.right = '20px'
+    // this.style.display = 'inline-block'
+    // this.style.position = 'fixed'
+    // this.style.bottom = '20px'
+    // this.style.right = '20px'
 
     this.appendChild(new MigButton())
   }
