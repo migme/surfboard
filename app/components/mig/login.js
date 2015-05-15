@@ -1,4 +1,4 @@
-import html from 'app/templates/mig/login.html!'
+import html from '../../templates/mig/login.jade'
 
 class Login extends HTMLElement {
   createdCallback () {

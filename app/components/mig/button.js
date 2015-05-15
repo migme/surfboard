@@ -1,5 +1,5 @@
-import MigMenu from 'app/components/mig/menu'
-import html from 'app/templates/mig/button.html!'
+import MigMenu from './menu'
+import html from '../../templates/mig/button.jade'
 
 class Button extends HTMLElement {
   createdCallback () {

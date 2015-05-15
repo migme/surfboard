@@ -4,6 +4,7 @@ var babelify = require('babelify')
 var jadeify = require('jadeify')
 var cssy = require('cssy')
 var postcss = require('postcss')
+var cssnext = require('cssnext')
 var source = require('vinyl-source-stream')
 
 gulp.task('build', function () {
@@ -41,9 +42,7 @@ gulp.task('build', function () {
     .transform(['cssy', {
       processor: function(ctx, done) {
         var result = postcss()
-//          .use(customProperties())
-//          .use(postcssCalc())
-//          .use(autoprefixer.postcss)
+          .use(cssnext())
           .process(ctx.src, {
             map : { prev : ctx.map } // Preserve source map !
           });
