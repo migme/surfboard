@@ -3,7 +3,7 @@ import html from '../../templates/mig/login.jade'
 class Login extends HTMLElement {
   createdCallback () {
     let root = this.createShadowRoot()
-    root.innerHTML = html
+    root.innerHTML = html()
 
     for (let element of root.querySelectorAll('button')) {
       element.addEventListener('click', event => {

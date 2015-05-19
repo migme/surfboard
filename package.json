@@ -2,7 +2,7 @@
   "name": "surfboard",
   "version": "1.0.0",
   "description": "Widget to embed Migme in web apps",
-  "main": "app/main.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/migme/surfboard",
   "dependencies": {
+    "babel": "^5.4.3",
+    "domready": "^1.0.8",
     "migme": "^1.0.1",
     "webcomponents.js": "^0.6.1"
   },
@@ -24,11 +26,18 @@
     "babelify": "^6.1.0",
     "browserify": "^10.1.3",
     "cssnext": "^1.4.0",
-    "cssy": "git://github.com/cbas/cssy.git#windows-paths",
+    "cssy": "^1.0.2",
     "gulp": "^3.8.11",
+    "gulp-sourcemaps": "^1.5.2",
+    "gulp-uglify": "^1.2.0",
+    "gulp-util": "^3.0.4",
     "jade": "^1.9.2",
     "jadeify": "^4.3.0",
+    "lodash.assign": "^3.1.0",
     "postcss": "^4.1.10",
-    "vinyl-source-stream": "^1.1.0"
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0",
+    "vinyl-transform": "^1.0.0",
+    "watchify": "^3.2.1"
   }
 }

@@ -1,17 +1,52 @@
 var gulp = require('gulp')
+var gutil = require('gulp-util')
+var sourcemaps = require('gulp-sourcemaps')
+
 var browserify = require('browserify')
+var watchify = require('watchify')
 var babelify = require('babelify')
 var jadeify = require('jadeify')
 var cssy = require('cssy')
+
 var postcss = require('postcss')
 var cssnext = require('cssnext')
+
+var uglify = require('gulp-uglify')
+
+var buffer = require('vinyl-buffer')
+var transform = require('vinyl-transform')
 var source = require('vinyl-source-stream')
 
-gulp.task('build', function () {
-  return browserify({
+var assign = require('lodash.assign')
+
+function bundle(b) {
+  return b.bundle()
+    .on('error', gutil.log.bind(gutil, 'Browserify Error'))
+    .pipe(source('bundle.js'))
+    .pipe(buffer())
+    .pipe(sourcemaps.init({
+      loadMaps: true
+    }))
+    .pipe(uglify())
+    .pipe(sourcemaps.write('./'))
+    .pipe(gulp.dest('./dist'))
+}
+
+function getWatchify() {
+  return watchify(getBrowserify())
+}
+
+function getBrowserify() {
+  var customOpts = {
+    entries: ['./index.js'],
     debug: true
-  })
-    .transform(babelify)
+  }
+  var opts = assign({}, watchify.args, customOpts)
+  return browserify(opts)
+    .on('log', gutil.log.bind(gutil, 'Browserify Log'))
+    .transform(babelify, {
+      sourceMapRelative: './app'
+    })
     /*
     .plugin(cssy, {
       // Global configuration:
@@ -38,18 +73,18 @@ gulp.task('build', function () {
         import:    false
       }
     })
-*/
+    */
     .transform(['cssy', {
       processor: function(ctx, done) {
         var result = postcss()
           .use(cssnext())
           .process(ctx.src, {
-            map : { prev : ctx.map } // Preserve source map !
+            map: {
+              prev : ctx.map
+            }
           });
-
         ctx.src = result.css;
         ctx.map = result.map.toJSON();
-
         done(null, ctx)
       }
     }])
@@ -57,8 +92,17 @@ gulp.task('build', function () {
       compileDebug: true,
       pretty: true
     })
-    .add('./app/main.js')
-    .bundle()
-    .pipe(source('bundle.js'))
-    .pipe(gulp.dest('./dist/'))
+}
+
+gulp.task('browserify', function() {
+  var b = getBrowserify()
+  return bundle(b)
+})
+
+gulp.task('watchify', function() {
+  var b = getWatchify()
+  b.on('update', function() {
+    return bundle(b)
+  })
+  return bundle(b)
 })
