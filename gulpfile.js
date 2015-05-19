@@ -45,7 +45,7 @@ function getBrowserify() {
   return browserify(opts)
     .on('log', gutil.log.bind(gutil, 'Browserify Log'))
     .transform(babelify, {
-      sourceMapRelative: './app'
+      sourceMapRelative: './'
     })
     /*
     .plugin(cssy, {
