@@ -1,3 +1,2 @@
-// require("babel/polyfill");
-require('babel/register');
-require('./app/main');
+require('babel/register')
+require('./app/main')
