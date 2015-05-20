@@ -1,8 +1,9 @@
+/*global HTMLElement */
 import Beachball from 'migme'
-import MigButton from './button'
-import MigPanel from './panel'
-import css from '../../styles/mig/me.css'
-import html from '../../templates/mig/me.jade'
+import MigButton from '../button'
+import MigPanel from '../panel'
+import css from './me.css'
+import html from './me.jade'
 
 class Me extends HTMLElement {
   createdCallback () {

@@ -1,22 +1,18 @@
-import MigMenu from './menu'
-import html from '../../templates/mig/button.jade'
-import css from '../../styles/mig/button.css'
+/*global HTMLElement */
+import MigMenu from '../menu'
+import html from './button.jade'
+import css from './button.css'
 
 class Button extends HTMLElement {
   createdCallback () {
     let root = this.createShadowRoot()
     root.innerHTML = html()
+    css.insert(root)
 
     root.querySelector('button')
       .addEventListener('click', event => {
         document.body.appendChild(new MigMenu())
       })
-  }
-  attachedCallback () {
-    this._css = css.insert(this.shadowRoot)
-  }
-  detachedCallback () {
-    this._css.remove()
   }
 }
 

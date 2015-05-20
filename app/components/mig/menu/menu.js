@@ -1,4 +1,5 @@
-import html from '../../templates/mig/menu.jade'
+/*global HTMLElement */
+import html from './menu.jade'
 
 class Menu extends HTMLElement {
   createdCallback () {

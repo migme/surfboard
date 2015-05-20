@@ -1,9 +1,12 @@
-import html from '../../templates/mig/login.jade'
+/*global HTMLElement */
+import html from './login.jade'
+import css from './login.css'
 
 class Login extends HTMLElement {
   createdCallback () {
     let root = this.createShadowRoot()
     root.innerHTML = html()
+    css.insert(root)
 
     for (let element of root.querySelectorAll('button')) {
       element.addEventListener('click', event => {
