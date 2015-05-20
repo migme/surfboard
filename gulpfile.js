@@ -14,12 +14,11 @@ var cssnext = require('cssnext')
 var uglify = require('gulp-uglify')
 
 var buffer = require('vinyl-buffer')
-var transform = require('vinyl-transform')
 var source = require('vinyl-source-stream')
 
 var assign = require('lodash.assign')
 
-function bundle(b) {
+function bundle (b) {
   return b.bundle()
     .on('error', gutil.log.bind(gutil, 'Browserify Error'))
     .pipe(source('bundle.js'))
@@ -32,11 +31,11 @@ function bundle(b) {
     .pipe(gulp.dest('./dist'))
 }
 
-function getWatchify() {
+function getWatchify () {
   return watchify(getBrowserify())
 }
 
-function getBrowserify() {
+function getBrowserify () {
   var customOpts = {
     entries: ['./index.js'],
     debug: true
@@ -74,34 +73,34 @@ function getBrowserify() {
       }
     })
     */
-    .transform(['cssy', {
-      processor: function(ctx, done) {
+    .transform(cssy, {
+      processor: function (ctx, done) {
         var result = postcss()
           .use(cssnext())
           .process(ctx.src, {
             map: {
-              prev : ctx.map
+              prev: ctx.map
             }
-          });
-        ctx.src = result.css;
-        ctx.map = result.map.toJSON();
+          })
+        ctx.src = result.css
+        ctx.map = result.map.toJSON()
         done(null, ctx)
       }
-    }])
+    })
     .transform(jadeify, {
       compileDebug: true,
       pretty: true
     })
 }
 
-gulp.task('browserify', function() {
+gulp.task('browserify', function () {
   var b = getBrowserify()
   return bundle(b)
 })
 
-gulp.task('watchify', function() {
+gulp.task('watchify', function () {
   var b = getWatchify()
-  b.on('update', function() {
+  b.on('update', function () {
     return bundle(b)
   })
   return bundle(b)
