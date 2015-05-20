@@ -1,3 +1,7 @@
-li {
-  font-size: 3em;
+section {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: stretch;
 }
