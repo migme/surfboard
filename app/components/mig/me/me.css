@@ -1,0 +1,16 @@
+mig-button {
+  display: inline-block;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+
+mig-panel {
+  background-color: yellow;
+  display: inline-block;
+  position: fixed;
+  top: 0px;
+  right: 20px;
+  bottom: 0px;
+  width: 300px;
+}
