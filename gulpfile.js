@@ -46,33 +46,6 @@ function getBrowserify () {
     .transform(babelify, {
       sourceMapRelative: './'
     })
-    /*
-    .plugin(cssy, {
-      // Global configuration:
-      minify:    true,
-      sourcemap: false,
-
-      // See live source reload:
-      // live: myHttpServerInstance,
-
-      // See pre/post processor (function or path to a processor module):
-      pre:  [
-        // './myPreprocessor',
-        // function anotherPreprocessor(ctx) { return ctx }
-      ],
-      // post: 'post-processor',
-
-      // See remedy:
-      //   - Use current package cssy config:
-      remedy: true,
-      //   - Use set remedy config:
-      remedy: {
-        // processor: './processor', // (function or path to a processor module)
-        match:     /css$/i,
-        import:    false
-      }
-    })
-    */
     .transform(cssy, {
       processor: function (ctx, done) {
         var result = postcss()
