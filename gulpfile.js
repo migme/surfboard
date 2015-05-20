@@ -20,7 +20,7 @@ var assign = require('lodash.assign')
 
 function bundle (b) {
   return b.bundle()
-    .on('error', function(err){
+    .on('error', function (err) {
       gutil.log('Browserify Error:', err.message)
     })
     .pipe(source('bundle.js'))
