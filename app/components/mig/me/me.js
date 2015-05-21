@@ -1,5 +1,5 @@
 /*global HTMLElement */
-import Beachball from 'migme'
+import Beachball from 'migme-beachball'
 import MigButton from '../button'
 import MigPanel from '../panel'
 import css from './me.css'

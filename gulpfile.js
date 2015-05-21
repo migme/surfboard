@@ -23,7 +23,7 @@ function bundle (b) {
     .on('error', function (err) {
       gutil.log('Browserify Error:', err.message)
     })
-    .pipe(source('bundle.js'))
+    .pipe(source('migme-surfboard.min.js'))
     .pipe(buffer())
     .pipe(sourcemaps.init({
       loadMaps: true

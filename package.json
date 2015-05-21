@@ -1,5 +1,5 @@
 {
-  "name": "surfboard",
+  "name": "migme-surfboard",
   "version": "1.0.0",
   "description": "Widget to embed Migme in web apps",
   "main": "index.js",
@@ -19,7 +19,7 @@
   "dependencies": {
     "babel": "^5.4.3",
     "domready": "^1.0.8",
-    "migme": "^1.0.1",
+    "migme-beachball": "^2.0.0",
     "webcomponents.js": "^0.6.1"
   },
   "devDependencies": {
