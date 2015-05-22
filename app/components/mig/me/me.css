@@ -1,3 +1,7 @@
+mig-me {
+  font-family: sans-serif;
+}
+
 mig-button {
   display: inline-block;
   position: fixed;
@@ -6,11 +10,11 @@ mig-button {
 }
 
 mig-panel {
-  background-color: yellow;
+  background-color: white;
   display: inline-block;
   position: fixed;
-  top: 0px;
-  right: 20px;
-  bottom: 0px;
+  top: 0;
+  right: 0;
+  bottom: 0;
   width: 300px;
 }
