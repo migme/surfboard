@@ -19,6 +19,6 @@ button::before {
   font-size: 50px;
   color: white;
   line-height: 50px;
-  top: 0px;
+  top: 0;
   position: absolute;
 }
