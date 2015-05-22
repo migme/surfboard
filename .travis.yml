@@ -1,0 +1,30 @@
+language: node_js
+node_js:
+- iojs
+before_script: npm i -g gulp
+notifications:
+  webhooks:
+    urls:
+    - https://webhooks.gitter.im/e/2dd93b7ce7af72ac110d
+    on_success: change
+    on_failure: always
+    on_start: never
+before_deploy: gulp browserify
+deploy:
+- provider: releases
+  api_key:
+    secure: OM72KvYNlrd3fgp1KDtrL1zQgPilsCl/mh+Le2Xwd13xeHmTFM0ejMRlSq6Ls0vHcndLWQWK59ZfqcOksMj2CEOIOmxFLg6MOa5NLryOMpOkpneozbf2iZFcsEB7/UbN+5SCm0VxPGIfBpfqFkEE1Y/yOyYtdie/b2RGIdITr80NCmGI5c3t53sQGFBVsHEPZZTu1S1j14hLO8Jkeg5UD5h3F/knZWQpkKeNGiMFUMNRIJVNfJ0aEcA8ytEAlq2h8LQ4tDZ4G6oP8Gjq2lyqx1heg5EYSPfu4M+DrSUJxtpyZ4mN+u6Is10uhstujXIsRwx0+m/A+iQuJFLr5+d76aH/iX0Kc6oOukO1eiiFKRyMlYTh3SyG+Ts1YZrjhNxHcaIOWqDlx8CHm11GKXo6hR95tJa8jCaWo+y/AKVkfVL891N/jrb9SQvrTsNNJsWrxbivj9vAF+OG5iiuXirkiEyDHtGU6nr4k2vw5J0DKXSTaBF5aI1earjX2qVSbHZy+Vgtvh67R+CEUCDMS0gXD7Bl7KeY6O1iM9TTYeOzJxiZ5ySZrRI9jZRLFq9gOX58SDqRHy2IjNcBCGW8/mb+xNGFuSEMYxUd3uvVfWawrN0F48YOykJbYHP281DGJiQhYIXMUCCqVxCAuqDiQkvxSkh1vG8fXgLny2BmXYlj0rY=
+  skip_cleanup: true
+  file_glob: true
+  file: dist/*
+  on:
+    repo: migme/surfboard
+    tags: true
+- provider: npm
+  email: build@mig.me
+  api_key:
+    secure: rLSAehLFsYWxWICyTiLSHxtFidOjqC32ZDqGAP1RgtqIkHPSnQx0I952wdTmK2FVurSWnQ7tLmBNkBFlOSUk4ZXOUXKCRMcQvYneSiqDBafSesSMo7RTyewL2cDTKDHJj/NX3c48+X8tx/bVPebTJf5v229e7Siku7awvUaQIwr/4+AE9aeIEgSupXq2CY4YDvUr8XFcg986DWUe+Stj0pouNVdzjl+DHon9u4N0e7cxvhG1cMLqlmiD6p3jgnp1uCrr0F7sc/Pf1todIDM7ztXPlEFHbusQKH1IfQiQtvmi4sqvajAkagGjcA/9db6A/pDcwJeffAnUQHE7lbSzttMWnV9Mqedm/jK3z+l9/NgVBXy2r5mm+zTBkgHbKaxaL9C5BdjjHGL/AJ7BhpyCP3qcKSveXNBmy8NB9ZzoxwqJh7mNzj8wamzgzXc9No0TQTVchG40NtKTkm9UkvMyOgw8rUFEA5eJoj155fz0M6ZuhJtRBqPW9ngNkPSgEuRHonyi6dQaEolJTZ5Vx2xvBWk9dlowJUN7LMLBNdh3Kd4FeGND8nSoipFZz9sDSTngdXmpGQBT/dH1zRmRjLpVh8nNaz4osvJbOxB2gO9bIct434geoS28k58XySmUzDCu/y7jbJD3w/qYiCifJFy8YuwGV4HdH5XU3uKoJAWEaqg=
+  skip_cleanup: true
+  on:
+    repo: migme/surfboard
+    tags: true

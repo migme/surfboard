@@ -12,7 +12,7 @@ class Login extends HTMLElement {
       element.addEventListener('click', event => {
         const suffix = /.*_(.*)/
         const method = event.target.id.replace(suffix, '$1')
-        this.migme.Session.login(method)
+        this.beachball.Session.login(method)
       })
     }
   }
