@@ -1,6 +1,6 @@
 {
   "name": "migme-surfboard",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Widget to embed Migme in web apps",
   "main": "index.js",
   "scripts": {
