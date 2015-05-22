@@ -9,6 +9,8 @@ Widget to bring the Migme fun to web apps.
 [![npm](https://img.shields.io/npm/dm/migme-surfboard.svg)](https://www.npmjs.com/package/migme-surfboard)
 [![GitHub Releases](https://img.shields.io/github/downloads/migme/surfboard/latest/total.svg)](https://github.com/migme/surfboard/releases/latest)
 
+![Surfboard Migbot](https://cdn.rawgit.com/cbas/a179036f13f3d43ebc72/raw/36439504320b80e0e03ba6d6cfecc4ce6ba5775e/surfboard.svg "Surfboard Migbot")
+
 ## Installation
 ### NPM
 ```
