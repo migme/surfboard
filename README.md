@@ -16,10 +16,6 @@ Widget to bring the Migme fun to web apps.
 ```
 npm install migme-surfboard
 ```
-### Bower
-```
-bower install migme-surfboard
-```
 ### CDN
 Replace `${VERSION}` with a released version number.
 ```html
