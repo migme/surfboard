@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "pretest": "standard",
-    "test": "zuul -- test.js"
+    "test": "zuul -- test/*"
   },
   "repository": {
     "type": "git",
