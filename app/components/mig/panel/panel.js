@@ -8,6 +8,9 @@ class Panel extends HTMLElement {
     root.innerHTML = html()
     css.insert(root)
   }
+  attachedCallback () {
+    this.style.display = 'none'
+  }
 }
 
 export default document.registerElement('mig-panel', Panel)
