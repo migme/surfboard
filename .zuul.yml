@@ -1,11 +1,11 @@
 ui: mocha-bdd
 browsers:
-  - name: firefox
-    version: latest
+#  - name: firefox
+#    version: latest
   - name: chrome
     version: latest
-  - name: ie
-    version: latest
+#  - name: ie
+#    version: latest
 browserify:
   - transform: babelify
   - transform: cssy
