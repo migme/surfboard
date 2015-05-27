@@ -1,6 +1,6 @@
 /* global describe before it */
 
-import app from '..' // eslint-disable-line no-unused-vars
+import app from '../..' // eslint-disable-line no-unused-vars
 import {expect} from 'chai'
 
 describe('loading', () => {

@@ -1,12 +1,13 @@
 /*global HTMLElement */
+import insertCss from 'insert-css'
 import html from './menu.jade'
-import css from './menu.css'
+import css from './menu.styl'
 
 class Menu extends HTMLElement {
   createdCallback () {
     let root = this.createShadowRoot()
     root.innerHTML = html()
-    css.insert(root)
+    insertCss(css, {parent: this.shadowRoot})
   }
 }
 

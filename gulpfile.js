@@ -6,10 +6,7 @@ var browserify = require('browserify')
 var watchify = require('watchify')
 var babelify = require('babelify')
 var jadeify = require('jadeify')
-var cssy = require('cssy')
-
-var postcss = require('postcss')
-var cssnext = require('cssnext')
+var stylify = require('stylify')
 
 var uglify = require('gulp-uglify')
 
@@ -48,19 +45,8 @@ function getBrowserify () {
     .transform(babelify, {
       sourceMapRelative: './'
     })
-    .transform(cssy, {
-      processor: function (ctx, done) {
-        var result = postcss()
-          .use(cssnext())
-          .process(ctx.src, {
-            map: {
-              prev: ctx.map
-            }
-          })
-        ctx.src = result.css
-        ctx.map = result.map.toJSON()
-        done(null, ctx)
-      }
+    .transform(stylify, {
+      use: 'nib'
     })
     .transform(jadeify, {
       compileDebug: true,

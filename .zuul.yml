@@ -8,7 +8,9 @@ browsers:
 #    version: latest
 browserify:
   - transform: babelify
-  - transform: cssy
+  - transform:
+      name: stylify
+      use: nib
   - transform: jadeify
 # scripts:
   # - dist/migme-surfboard.min.js

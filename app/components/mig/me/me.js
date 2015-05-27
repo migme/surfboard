@@ -1,8 +1,9 @@
 /*global HTMLElement */
+import insertCss from 'insert-css'
 import Beachball from 'migme-beachball'
 import MigButton from '../button'
 import MigPanel from '../panel'
-import css from './me.css'
+import css from './me.styl'
 import html from './me.jade'
 
 class Me extends HTMLElement {
@@ -12,12 +13,7 @@ class Me extends HTMLElement {
     root.innerHTML = html()
     root.appendChild(new MigPanel())
     root.appendChild(new MigButton())
-  }
-  attachedCallback () {
-    this._css = css.insert(this.shadowRoot)
-  }
-  detachedCallback () {
-    this._css.remove()
+    insertCss(css, {parent: this.shadowRoot})
   }
 }
 
