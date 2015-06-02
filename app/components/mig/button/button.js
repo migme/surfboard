@@ -1,6 +1,6 @@
 /*global HTMLElement */
 import insertCss from 'insert-css'
-import MigMenu from '../menu'
+// import MigMenu from '../menu'
 import html from './button.jade'
 import css from './button.styl'
 
