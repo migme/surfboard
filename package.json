@@ -39,6 +39,7 @@
     "lodash.assign": "^3.1.0",
     "nib": "^1.1.0",
     "npm-run-all": "^1.2.5",
+    "smokestack": "^3.3.0",
     "standard": "^3.11.0",
     "stylify": "damonoehlman/stylify#master",
     "stylusify": "^2.0.0",
