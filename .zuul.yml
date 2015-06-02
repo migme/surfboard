@@ -1,9 +1,10 @@
 ui: mocha-bdd
 browsers:
-#  - name: firefox
-#    version: latest
   - name: chrome
     version: latest
+# Zuul test suite only runs on Chrome
+#  - name: firefox
+#    version: latest
 #  - name: ie
 #    version: latest
 browserify:
