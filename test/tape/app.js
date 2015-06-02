@@ -28,11 +28,6 @@ test('visibility', t => {
         document.documentElement.clientWidth - fromRight,
         document.documentElement.clientHeight - fromBottom
       )
-      console.log(
-        document.documentElement.clientWidth,
-        document.documentElement.clientHeight,
-        target
-      )
       t.equal(target, widget)
       t.end()
     })
