@@ -12,8 +12,8 @@ class Button extends HTMLElement {
 
     root.querySelector('button')
       .addEventListener('click', event => {
-        var el = this.parentNode.querySelector('mig-panel')
-        el.appendChild(new MigMenu())
+        // var el = this.parentNode.querySelector('mig-panel')
+        // el.appendChild(new MigMenu())
       })
   }
 }
