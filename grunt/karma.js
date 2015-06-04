@@ -41,7 +41,7 @@ if (process.env.TRAVIS) {
 }
 
 if (process.env.CI_NAME === 'codeship') {
-  assign(karma, {
+  assign(karma.runner, {
     reporters: ['dots']
   })
 }
