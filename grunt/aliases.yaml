@@ -1,0 +1,6 @@
+test:
+  - clean:test
+  - karma
+
+default:
+  - test

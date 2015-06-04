@@ -1,12 +1,13 @@
 /*global HTMLElement */
+import insertCss from 'insert-css'
 import html from './login.jade'
-import css from './login.css'
+import css from './login.styl'
 
 class Login extends HTMLElement {
   createdCallback () {
     let root = this.createShadowRoot()
     root.innerHTML = html()
-    css.insert(root)
+    insertCss(css, {parent: this.shadowRoot})
 
     for (let element of root.querySelectorAll('button')) {
       element.addEventListener('click', event => {
