@@ -1,4 +1,5 @@
 /*global HTMLElement */
+import closest from './closest'
 import insertCss from 'insert-css'
 import html from './login.jade'
 import css from './login.styl'
@@ -16,6 +17,12 @@ class Login extends HTMLElement {
         this.beachball.Session.login(method)
       })
     }
+  }
+  attachedCallback () {
+    this.beachball = this::closest('mig-me').beachball
+  }
+  detachedCallback () {
+    delete this.beachball
   }
 }
 
