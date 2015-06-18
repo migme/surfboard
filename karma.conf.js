@@ -2,7 +2,6 @@ var isparta = require('isparta')
 var istanbul = require('browserify-istanbul')
 
 var argv = require('minimist')(process.argv.slice(2))
-console.dir(argv)
 
 var options = {
   // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
@@ -29,9 +28,6 @@ var options = {
   reporters: [
     'progress'
   ],
-
-  // possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
-  // logLevel: config.LOG_INFO,
 
   // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
   browsers: ['Chrome' /* , 'Firefox' */ ]
