@@ -1,4 +1,4 @@
-/* global describe before it */
+/* global describe before it CustomEvent */
 
 import app from '../..' // eslint-disable-line no-unused-vars
 import {expect} from 'chai'
@@ -10,8 +10,14 @@ describe('panel', () => {
   })
   it('is hidden by default', () => {
     let panel = widget.shadowRoot.querySelector('mig-panel')
+    expect(panel).to.not.exist
+  })
+  it('is visible when opened', () => {
+    widget.dispatchEvent(new CustomEvent('toggle'))
+    let panel = widget.shadowRoot.querySelector('mig-panel')
     const rect = panel.getBoundingClientRect()
-    expect(rect.width).to.equal(0)
-    expect(rect.height).to.equal(0)
+    expect(rect.width).to.be.above(0)
+    expect(rect.height).to.be.above(0)
+    widget.dispatchEvent(new CustomEvent('toggle'))
   })
 })

@@ -16,7 +16,7 @@ class Me extends HTMLElement {
     insertCss(css, { parent: this.shadowRoot })
 
     this.addEventListener('toggle', event => {
-      var panel = this.parentNode.querySelector('mig-panel')
+      var panel = root.querySelector('mig-panel')
       if (panel) {
         panel.remove()
       } else {

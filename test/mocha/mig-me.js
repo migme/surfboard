@@ -1,4 +1,4 @@
-/* global describe before it */
+/* global describe before it CustomEvent */
 
 import app from '../..' // eslint-disable-line no-unused-vars
 import {expect} from 'chai'
