@@ -33,7 +33,7 @@ var options = {
   browsers: ['Chrome' /* , 'Firefox' */ ]
 }
 
-if (argv.coverage) {
+if (!argv.coverage || argv.coverage === true) {
   options.browserify.transform.unshift(
     istanbul({
       defaultIgnore: false,
