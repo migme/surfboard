@@ -29,7 +29,7 @@
     "babel": "^5.5.8",
     "domready": "^1.0.8",
     "insert-css": "cbas/insert-css",
-    "migme-beachball": "^2.0.0",
+    "migme-beachball": "^3.0.0",
     "webcomponents.js": "^0.6.1"
   },
   "devDependencies": {
