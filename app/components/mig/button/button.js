@@ -1,6 +1,5 @@
-/*global HTMLElement */
+/*global HTMLElement CustomEvent */
 import insertCss from 'insert-css'
-// import MigMenu from '../menu'
 import html from './button.jade'
 import css from './button.styl'
 
@@ -12,8 +11,7 @@ class Button extends HTMLElement {
 
     root.querySelector('button')
       .addEventListener('click', event => {
-        // var el = this.parentNode.querySelector('mig-panel')
-        // el.appendChild(new MigMenu())
+        this.dispatchEvent(new CustomEvent('toggle'))
       })
   }
 }

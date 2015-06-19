@@ -46,11 +46,22 @@ const widget = new Surfboard()
 
 ### Development
 ```bash
-npm install     # Install dependencies
-karma start     # Run tests (development)
-npm test        # Run tests (continuous integration)
-gulp browserify # Build
-gulp watchify   # Build and automatically rebuild when any file changes
+# Install dependencies
+npm install
+
+# Run tests (continuous integration)
+npm test
+
+# Run tests (development)
+karma start
+# ... sans code coverage for clean source maps
+# See: douglasduteil/isparta#31
+karma start --coverage false
+
+# Build
+gulp browserify
+# ... forever
+gulp watchify
 ```
 
 ### Live Demo

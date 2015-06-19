@@ -9,11 +9,20 @@ import html from './me.jade'
 class Me extends HTMLElement {
   createdCallback () {
     this.beachball = new Beachball()
+
     let root = this.createShadowRoot()
     root.innerHTML = html()
-    root.appendChild(new MigPanel())
     root.appendChild(new MigButton())
-    insertCss(css, {parent: this.shadowRoot})
+    insertCss(css, { parent: this.shadowRoot })
+
+    this.addEventListener('toggle', event => {
+      var panel = root.querySelector('mig-panel')
+      if (panel) {
+        panel.remove()
+      } else {
+        root.appendChild(new MigPanel())
+      }
+    })
   }
 }
 
