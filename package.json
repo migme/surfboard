@@ -12,7 +12,11 @@
     "type": "git",
     "url": "https://github.com/migme/surfboard.git"
   },
-  "author": "",
+  "author": "Migme (https://mig.me)",
+  "contributors": [
+    "Ed Moore <eddie.moore@gmail.com>",
+    "Sebastiaan Deckers <seb@ninja.sg>"
+  ],
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/migme/surfboard/issues"
