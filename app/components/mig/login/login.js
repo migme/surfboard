@@ -14,15 +14,9 @@ class Login extends HTMLElement {
       element.addEventListener('click', event => {
         const suffix = /.*_(.*)/
         const method = event.target.id.replace(suffix, '$1')
-        this.beachball.Session.login(method)
+        this::closest('mig-me').beachball.Session.login(method)
       })
     }
-  }
-  attachedCallback () {
-    this.beachball = this::closest('mig-me').beachball
-  }
-  detachedCallback () {
-    delete this.beachball
   }
 }
 
