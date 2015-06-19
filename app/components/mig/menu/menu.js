@@ -8,7 +8,7 @@ class Menu extends HTMLElement {
   createdCallback () {
     let root = this.createShadowRoot()
     root.innerHTML = html()
-    insertCss(css, {parent: this.shadowRoot})
+    insertCss(css, { parent: this.shadowRoot })
 
     root.querySelector('button')
       .addEventListener('click', event => {
