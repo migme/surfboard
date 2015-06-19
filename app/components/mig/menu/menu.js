@@ -1,4 +1,5 @@
-/*global HTMLElement CustomEvent */
+/*global HTMLElement */
+import {bubble} from '../../../utils/events'
 import insertCss from 'insert-css'
 import html from './menu.jade'
 import css from './menu.styl'
@@ -11,10 +12,7 @@ class Menu extends HTMLElement {
 
     root.querySelector('button')
       .addEventListener('click', event => {
-        this.dispatchEvent(new CustomEvent('navigate', {
-          detail: { tagName: 'mig-login' },
-          bubbles: true
-        }))
+        this::bubble('navigate', { tagName: 'mig-login' })
       })
   }
 }
