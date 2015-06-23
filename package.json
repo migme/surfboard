@@ -6,7 +6,7 @@
   "scripts": {
     "pretest": "standard",
     "test": "grunt test",
-    "codecov": "cat coverage/coverage.json | codecov"
+    "codecov": "cat coverage/coverage-final.json | codecov"
   },
   "repository": {
     "type": "git",
