@@ -50,7 +50,7 @@ if (!argv.coverage || argv.coverage === true) {
   options.coverageReporter = {
     dir: 'coverage',
     reporters: [
-      { type: 'lcovonly', subdir: '.', file: 'lcov.info' },
+      { type: 'json', subdir: '.', file: 'coverage.json' },
       { type: 'text' },
       { type: 'text-summary' }
     ]

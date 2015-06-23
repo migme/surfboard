@@ -6,7 +6,7 @@
   "scripts": {
     "pretest": "standard",
     "test": "grunt test",
-    "codecov": "cat coverage/lcov.info | codecov"
+    "codecov": "cat coverage/coverage.json | codecov"
   },
   "repository": {
     "type": "git",
@@ -60,6 +60,7 @@
     "karma-chrome-launcher": "^0.1.12",
     "karma-coverage": "douglasduteil/karma-coverage#next",
     "karma-firefox-launcher": "^0.1.6",
+    "karma-json-reporter": "^1.1.0",
     "karma-mocha": "^0.1.10",
     "karma-sauce-launcher": "^0.2.11",
     "karma-sinon-chai": "^0.3.2",
