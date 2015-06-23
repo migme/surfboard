@@ -60,6 +60,7 @@
     "karma-chrome-launcher": "^0.1.12",
     "karma-coverage": "douglasduteil/karma-coverage#next",
     "karma-firefox-launcher": "^0.1.6",
+    "karma-html-reporter": "^0.2.6",
     "karma-json-reporter": "^1.1.0",
     "karma-mocha": "^0.1.10",
     "karma-sauce-launcher": "^0.2.11",
