@@ -1,6 +1,6 @@
 /*global HTMLElement */
 import insertCss from 'insert-css'
-import Beachball from 'migme-beachball'
+import Beachball from 'migme-beachball/src'
 import MigButton from '../button'
 import MigPanel from '../panel'
 import css from './me.styl'
