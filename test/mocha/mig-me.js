@@ -1,7 +1,5 @@
-/* global describe before it CustomEvent */
-
+/* global describe before it expect CustomEvent */
 import app from '../..' // eslint-disable-line no-unused-vars
-import {expect} from 'chai'
 
 describe('mig-me', () => {
   it('should auto-inject', () => {

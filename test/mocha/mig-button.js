@@ -1,7 +1,5 @@
-/* global describe before it */
-
+/* global describe before it expect */
 import app from '../..' // eslint-disable-line no-unused-vars
-import {expect} from 'chai'
 
 describe('mig-button', () => {
   let widget
