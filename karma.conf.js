@@ -49,8 +49,11 @@ if (!argv.coverage || argv.coverage === true) {
   options.reporters.push('coverage')
   options.coverageReporter = {
     dir: 'coverage',
+    subdir: '.',
     reporters: [
-      { type: 'lcovonly', subdir: '.', file: 'lcov.info' },
+      { type: 'html' },
+      { type: 'json' },
+      { type: 'lcovonly' },
       { type: 'text' },
       { type: 'text-summary' }
     ]
