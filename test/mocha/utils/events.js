@@ -2,7 +2,9 @@
 import {dispatch, bubble} from '../../../app/utils/events'
 
 describe('events wrapper', () => {
-  const target = { dispatchEvent: new Function() }
+  const target = {
+    dispatchEvent: new Function() // eslint-disable-line no-new-func
+  }
   sinon.stub(target, 'dispatchEvent')
   const type = 'foo'
   const payload = { bar: 123 }
