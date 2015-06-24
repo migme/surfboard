@@ -1,4 +1,4 @@
-/* global describe before it expect CustomEvent */
+/* global describe before it expect */
 import {dispatch} from '../../app/utils/events'
 import app from '../..' // eslint-disable-line no-unused-vars
 
