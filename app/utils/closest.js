@@ -5,7 +5,6 @@ export default function closest (selector) {
   if (match) {
     return match
   }
-
   const host = this::parentHost()
   if (host) {
     return host::closest(selector)
