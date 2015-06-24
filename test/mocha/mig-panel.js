@@ -1,7 +1,6 @@
-/* global describe before it CustomEvent */
-
+/* global describe before it expect */
+import {dispatch} from '../../app/utils/events'
 import app from '../..' // eslint-disable-line no-unused-vars
-import {expect} from 'chai'
 
 describe('panel', () => {
   let widget
@@ -13,11 +12,13 @@ describe('panel', () => {
     expect(panel).to.not.exist
   })
   it('is visible when opened', () => {
-    widget.dispatchEvent(new CustomEvent('toggle'))
+    widget::dispatch('toggle')
     let panel = widget.shadowRoot.querySelector('mig-panel')
+    expect(panel).to.exist
     const rect = panel.getBoundingClientRect()
     expect(rect.width).to.be.above(0)
     expect(rect.height).to.be.above(0)
-    widget.dispatchEvent(new CustomEvent('toggle'))
+    expect(panel.querySelector('mig-menu')).to.exist
+    widget::dispatch('toggle')
   })
 })

@@ -1,7 +1,6 @@
-/* global describe before it CustomEvent */
-
+/* global describe it expect */
+import {dispatch} from '../../app/utils/events'
 import app from '../..' // eslint-disable-line no-unused-vars
-import {expect} from 'chai'
 
 describe('mig-me', () => {
   it('should auto-inject', () => {
@@ -20,11 +19,11 @@ describe('mig-me', () => {
       let panel
       let widget = document.querySelector('mig-me')
 
-      widget.dispatchEvent(new CustomEvent('toggle'))
+      widget::dispatch('toggle')
       panel = widget.shadowRoot.querySelector('mig-panel')
       expect(panel).to.exist
 
-      widget.dispatchEvent(new CustomEvent('toggle'))
+      widget::dispatch('toggle')
       panel = widget.shadowRoot.querySelector('mig-panel')
       expect(panel).not.to.exist
     })
