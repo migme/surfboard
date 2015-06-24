@@ -29,11 +29,11 @@
     "babel": "^5.6.4",
     "domready": "^1.0.8",
     "insert-css": "cbas/insert-css",
-    "migme-beachball": "^3.0.0",
+    "migme-beachball": "^3.1.0",
     "webcomponents.js": "^0.7.2"
   },
   "devDependencies": {
-    "babel-eslint": "^3.1.17",
+    "babel-eslint": "^3.1.18",
     "babelify": "^6.1.2",
     "browserify": "^10.2.4",
     "browserify-istanbul": "^0.2.1",
@@ -49,15 +49,15 @@
     "gulp": "^3.9.0",
     "gulp-sourcemaps": "^1.5.2",
     "gulp-uglify": "^1.2.0",
-    "gulp-util": "^3.0.5",
+    "gulp-util": "^3.0.6",
     "isparta": "^3.0.3",
     "istanbul": "^0.3.15",
     "jade": "^1.11.0",
     "jadeify": "^4.3.0",
-    "karma": "^0.12.36",
+    "karma": "^0.12.37",
     "karma-browserify": "^4.2.1",
     "karma-chai": "^0.1.0",
-    "karma-chrome-launcher": "^0.1.12",
+    "karma-chrome-launcher": "^0.2.0",
     "karma-coverage": "douglasduteil/karma-coverage#next",
     "karma-firefox-launcher": "^0.1.6",
     "karma-html-reporter": "^0.2.6",
@@ -79,6 +79,6 @@
     "time-grunt": "^1.2.1",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
-    "watchify": "^3.2.2"
+    "watchify": "^3.2.3"
   }
 }
