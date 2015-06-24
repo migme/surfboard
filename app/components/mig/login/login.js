@@ -8,13 +8,22 @@ class Login extends HTMLElement {
   createdCallback () {
     let root = this.createShadowRoot()
     root.innerHTML = html()
-    insertCss(css, {parent: this.shadowRoot})
+    insertCss(css, { parent: this.shadowRoot })
+
+    const options = {}
+
+    options['iframe'] = {
+      parent: this.shadowRoot
+    }
 
     for (let element of root.querySelectorAll('button')) {
       element.addEventListener('click', event => {
         const suffix = /.*_(.*)/
         const method = event.target.id.replace(suffix, '$1')
-        this::closest('mig-me').beachball.Session.login(method)
+        const opts = options[method]
+        console.log(opts)
+        this::closest('mig-me').beachball
+          .Session.login(method, opts)
       })
     }
   }
