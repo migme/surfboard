@@ -1,4 +1,4 @@
-/* global describe before it expect */
+/* global describe before after it expect Event */
 import closest from '../../app/utils/closest'
 import {dispatch} from '../../app/utils/events'
 import app from '../..' // eslint-disable-line no-unused-vars
