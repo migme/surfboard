@@ -21,7 +21,6 @@ class Login extends HTMLElement {
         const suffix = /.*_(.*)/
         const method = event.target.id.replace(suffix, '$1')
         const opts = options[method]
-        console.log(opts)
         this::closest('mig-me').beachball
           .Session.login(method, opts)
       })
