@@ -1,4 +1,5 @@
-/* global describe before it expect */
+/* global describe before after it expect */
+import {dispatch, once} from '../../app/utils/events'
 import app from '../..' // eslint-disable-line no-unused-vars
 
 describe('mig-button', () => {
@@ -20,5 +21,15 @@ describe('mig-button', () => {
       document.documentElement.clientHeight - fromBottom
     )
     expect(target).to.equal(widget)
+  })
+  it('fires toggle events', done => {
+    button::once('toggle', event => {
+      expect(event.type).to.equal('toggle')
+      done()
+    })
+    button.shadowRoot.querySelector('button').click()
+  })
+  after(() => {
+    widget::dispatch('toggle')
   })
 })
