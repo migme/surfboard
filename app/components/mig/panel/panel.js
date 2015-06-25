@@ -22,7 +22,7 @@ class Panel extends HTMLElement {
       })
 
     this.addEventListener('navigate', event => {
-      if (this.lastChild) {
+      while (this.lastChild) {
         this.lastChild.remove()
       }
       var tagName = event.detail.tagName
