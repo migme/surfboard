@@ -1,11 +1,10 @@
 /* global describe it expect sinon */
-import {dispatch, bubble} from '../../../app/utils/events'
+import EventTarget from 'event-target-shim'
+import {dispatch, bubble, once} from '../../../app/utils/events'
 
 describe('events wrapper', () => {
-  const target = {
-    dispatchEvent: new Function() // eslint-disable-line no-new-func
-  }
-  sinon.stub(target, 'dispatchEvent')
+  const target = new EventTarget()
+  sinon.spy(target, 'dispatchEvent')
   const type = 'foo'
   const payload = { bar: 123 }
   it('dispatches', () => {
@@ -17,5 +16,12 @@ describe('events wrapper', () => {
     target::bubble(type, payload)
     expect(target.dispatchEvent)
       .to.have.been.calledWithMatch({ bubbles: true })
+  })
+  it('listens very carefully', done => {
+    target::once(type, event => {
+      expect(event.type).to.equal(type)
+      done()
+    })
+    target::dispatch(type)
   })
 })
