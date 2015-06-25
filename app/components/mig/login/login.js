@@ -10,10 +10,10 @@ class Login extends HTMLElement {
     root.innerHTML = html()
     insertCss(css, { parent: this.shadowRoot })
 
-    const options = {}
-
-    options['iframe'] = {
-      parent: this.shadowRoot
+    const options = {
+      iframe: {
+        parent: this.shadowRoot
+      }
     }
 
     for (let element of root.querySelectorAll('button')) {
