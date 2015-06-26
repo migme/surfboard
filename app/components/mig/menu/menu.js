@@ -1,5 +1,5 @@
 /*global HTMLElement */
-import {bubble} from '../../../utils/events'
+import {bubble} from 'bubbly'
 import insertCss from 'insert-css'
 import html from './menu.jade'
 import css from './menu.styl'

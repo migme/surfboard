@@ -1,4 +1,6 @@
 /*global HTMLElement */
+import {on} from 'bubbly'
+import closest from '../../../utils/closest'
 import insertCss from 'insert-css'
 import html from './panel.jade'
 import css from './panel.styl'

@@ -1,6 +1,6 @@
 /* global describe before after it expect Event */
 import closest from '../../app/utils/closest'
-import {dispatch} from '../../app/utils/events'
+import {dispatch} from 'bubbly'
 import app from '../..' // eslint-disable-line no-unused-vars
 
 describe('mig-login', () => {

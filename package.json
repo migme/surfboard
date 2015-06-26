@@ -27,6 +27,7 @@
   },
   "dependencies": {
     "babel": "^5.6.4",
+    "bubbly": "^1.0.0",
     "domready": "^1.0.8",
     "insert-css": "cbas/insert-css",
     "migme-beachball": "^3.1.0",
