@@ -1,5 +1,5 @@
 /*global HTMLElement */
-import {on} from 'bubbly'
+import { on } from 'bubbly'
 import closest from '../../../utils/closest'
 import insertCss from 'insert-css'
 import html from './panel.jade'
@@ -18,12 +18,11 @@ class Panel extends HTMLElement {
 
     this.appendChild(new MigMenu())
 
-    root.querySelector('button')
-      .addEventListener('click', event => {
-        this.remove()
-      })
+    root.querySelector('button')::on('click', event => {
+      this.remove()
+    })
 
-    this.addEventListener('navigate', event => {
+    this::on('navigate', event => {
       while (this.lastChild) {
         this.lastChild.remove()
       }
@@ -31,6 +30,12 @@ class Panel extends HTMLElement {
       var view = document.createElement(tagName)
       this.appendChild(view)
     })
+  }
+  attachedCallback () {
+    this::closest('mig-me').beachball
+      .Session::on('change', event => {
+        console.log('session changed', event.detail)
+      })
   }
 }
 

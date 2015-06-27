@@ -1,6 +1,6 @@
 /* global describe before after it expect Event */
 import closest from '../../app/utils/closest'
-import {dispatch} from 'bubbly'
+import { dispatch } from 'bubbly'
 import app from '../..' // eslint-disable-line no-unused-vars
 
 describe('mig-login', () => {
@@ -16,8 +16,7 @@ describe('mig-login', () => {
     expect(login).to.exist
   })
   it('shows the login form', () => {
-    login.shadowRoot.querySelector('#login_iframe')
-      .dispatchEvent(new Event('click'))
+    login.shadowRoot.querySelector('#login_iframe')::dispatch('click')
     expect(login.shadowRoot.querySelector('iframe')).to.exist
   })
   after(() => {
