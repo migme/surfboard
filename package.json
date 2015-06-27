@@ -31,6 +31,7 @@
     "domready": "^1.0.8",
     "insert-css": "cbas/insert-css",
     "migme-beachball": "^3.1.0",
+    "parasol": "^1.0.1",
     "webcomponents.js": "^0.7.2"
   },
   "devDependencies": {
