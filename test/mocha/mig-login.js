@@ -1,4 +1,4 @@
-/* global describe before after it expect Event */
+/* global describe before after it expect */
 import { closest } from 'parasol'
 import { dispatch } from 'bubbly'
 import app from '../..' // eslint-disable-line no-unused-vars

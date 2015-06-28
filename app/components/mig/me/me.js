@@ -1,4 +1,4 @@
-/*global HTMLElement */
+/* global HTMLElement */
 import { on } from 'bubbly'
 import insertCss from 'insert-css'
 import Beachball from 'migme-beachball/src'

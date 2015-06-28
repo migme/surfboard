@@ -1,4 +1,4 @@
-/*global HTMLElement */
+/* global HTMLElement */
 import {bubble} from 'bubbly'
 import insertCss from 'insert-css'
 import html from './menu.jade'

@@ -1,4 +1,4 @@
-/*global HTMLElement CustomEvent */
+/* global HTMLElement */
 import { on, dispatch } from 'bubbly'
 import insertCss from 'insert-css'
 import html from './button.jade'

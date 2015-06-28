@@ -1,14 +1,14 @@
-/*global HTMLElement */
+/* global HTMLElement */
 import { dispatch, on } from 'bubbly'
 import { closest } from 'parasol'
 import insertCss from 'insert-css'
 import html from './panel.jade'
 import css from './panel.styl'
 
-/*eslint-disable no-unused-vars */
+/* eslint-disable no-unused-vars */
 import MigMenu from '../menu'
 import MigLogin from '../login'
-/*eslint-enable no-unused-vars */
+/* eslint-enable no-unused-vars */
 
 class Panel extends HTMLElement {
   createdCallback () {

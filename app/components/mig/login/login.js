@@ -1,4 +1,4 @@
-/*global HTMLElement */
+/* global HTMLElement */
 import { closest } from 'parasol'
 import insertCss from 'insert-css'
 import html from './login.jade'
