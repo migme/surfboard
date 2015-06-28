@@ -1,40 +1,35 @@
 /*global HTMLElement */
-import { on } from 'bubbly'
+import { dispatch, on } from 'bubbly'
 import { closest } from 'parasol'
 import insertCss from 'insert-css'
 import html from './panel.jade'
 import css from './panel.styl'
-import MigMenu from '../menu'
 
 /*eslint-disable no-unused-vars */
+import MigMenu from '../menu'
 import MigLogin from '../login'
 /*eslint-enable no-unused-vars */
 
 class Panel extends HTMLElement {
   createdCallback () {
-    let root = this.createShadowRoot()
+    const root = this.createShadowRoot()
     root.innerHTML = html()
-    insertCss(css, { parent: this.shadowRoot })
-
-    this.appendChild(new MigMenu())
-
-    root.querySelector('button')::on('click', event => {
-      this.remove()
-    })
-
+    insertCss(css, { parent: root })
+    this.shadowRoot.querySelector('button')::on('click', ::this.remove)
     this::on('navigate', event => {
       while (this.lastChild) {
         this.lastChild.remove()
       }
-      var tagName = event.detail.tagName
-      var view = document.createElement(tagName)
+      const tagName = event.detail.tagName
+      const view = document.createElement(tagName)
       this.appendChild(view)
     })
+    this::dispatch('navigate', { tagName: 'mig-menu' })
   }
   attachedCallback () {
-    this::closest('mig-me').beachball
-      .Session::on('change', event => {
-        console.log('session changed', event.detail)
+    this::closest('mig-me').beachball.Session
+      ::on('change', ({ detail: session }) => {
+        this.shadowRoot.querySelector('h1').innerText = session.access_token
       })
   }
 }

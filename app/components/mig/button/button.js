@@ -1,4 +1,5 @@
 /*global HTMLElement CustomEvent */
+import { on, dispatch } from 'bubbly'
 import insertCss from 'insert-css'
 import html from './button.jade'
 import css from './button.styl'
@@ -8,11 +9,7 @@ class Button extends HTMLElement {
     let root = this.createShadowRoot()
     root.innerHTML = html()
     insertCss(css, {parent: this.shadowRoot})
-
-    root.querySelector('button')
-      .addEventListener('click', event => {
-        this.dispatchEvent(new CustomEvent('toggle'))
-      })
+    root.querySelector('button')::on('click', () => this::dispatch('toggle'))
   }
 }
 
