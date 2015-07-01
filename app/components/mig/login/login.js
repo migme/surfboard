@@ -23,6 +23,7 @@ class Login extends HTMLElement {
         const opts = options[method]
         this::closest('mig-me').beachball
           .Session.login(method, opts)
+          .then(::this.remove)
       })
     }
   }
