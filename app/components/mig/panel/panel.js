@@ -13,9 +13,12 @@ import MigLogin from '../login'
 class Panel extends HTMLElement {
   createdCallback () {
     const root = this.createShadowRoot()
-    root.innerHTML = html()
+    root.innerHTML = html({
+      title: 'Welcome'
+    })
     insertCss(css, { parent: root })
-    this.shadowRoot.querySelector('button')::on('click', ::this.remove)
+    this.shadowRoot.querySelector('button')
+      ::on('click', event => this::dispatch('toggle'))
     this::on('navigate', event => {
       while (this.lastChild) {
         this.lastChild.remove()
@@ -29,8 +32,11 @@ class Panel extends HTMLElement {
   attachedCallback () {
     this::closest('mig-me').beachball.Session
       ::on('change', ({ detail: session }) => {
-        this.shadowRoot.querySelector('h1').innerText = session.access_token
+        this.setTitle(session.access_token)
       })
+  }
+  setTitle (title) {
+    this.shadowRoot.querySelector('.title').innerText = title
   }
 }
 
