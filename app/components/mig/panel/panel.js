@@ -7,7 +7,6 @@ import css from './panel.styl'
 
 /* eslint-disable no-unused-vars */
 import MigMenu from '../menu'
-import MigLogin from '../login'
 /* eslint-enable no-unused-vars */
 
 class Panel extends HTMLElement {
@@ -30,10 +29,13 @@ class Panel extends HTMLElement {
     this::dispatch('navigate', { tagName: 'mig-menu' })
   }
   attachedCallback () {
-    this::closest('mig-me').beachball.Session
-      ::on('change', ({ detail: session }) => {
-        this.setTitle(session.access_token)
-      })
+    const beachball = this::closest('mig-me').beachball
+    beachball.Session.getStatus().then(session => {
+      this.setTitle(session.access_token)
+    })
+    beachball.Session::on('change', ({ detail: session }) => {
+      this.setTitle(session.access_token)
+    })
   }
   setTitle (title) {
     this.shadowRoot.querySelector('.title').innerText = title
