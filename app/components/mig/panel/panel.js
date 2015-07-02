@@ -18,11 +18,10 @@ class Panel extends HTMLElement {
     insertCss(css, { parent: root })
     this.shadowRoot.querySelector('button')
       ::on('click', event => this::dispatch('toggle'))
-    this::on('navigate', event => {
+    this::on('navigate', ({ detail: { tagName } }) => {
       while (this.lastChild) {
         this.lastChild.remove()
       }
-      const tagName = event.detail.tagName
       const view = document.createElement(tagName)
       this.appendChild(view)
     })

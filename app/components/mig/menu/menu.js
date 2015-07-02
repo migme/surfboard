@@ -1,5 +1,5 @@
 /* global HTMLElement */
-import { bubble } from 'bubbly'
+import { bubble, on } from 'bubbly'
 import insertCss from 'insert-css'
 import html from './menu.jade'
 import css from './menu.styl'
@@ -13,10 +13,9 @@ class Menu extends HTMLElement {
     let root = this.createShadowRoot()
     root.innerHTML = html()
     insertCss(css, { parent: this.shadowRoot })
-    // root.querySelector('button')
-    //   .addEventListener('click', event => {
-    //     this::bubble('navigate', { tagName: 'mig-login' })
-    //   })
+    root.query('.login')::on('click', () => {
+      this::bubble('navigate', { tagName: 'mig-login' })
+    })
   }
 }
 

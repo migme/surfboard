@@ -12,12 +12,19 @@ h1
 nav
   text-align center
 
-  mig-login
-    background-color $mantis
+  button
     display block
     width 200px
     max-width calc(100% - 20px)
     margin 20px auto
+    cursor pointer
+    padding 10px 20px
+    border-style none
+    background-color $mantis
+    color white
+    font-size 16px
 
+    &:focus
+      outline none
     &:active
       background-color darken($mantis, 20%)
