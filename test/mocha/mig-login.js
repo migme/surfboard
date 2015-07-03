@@ -9,14 +9,13 @@ describe('mig-login', () => {
   before(() => {
     widget = document.querySelector('mig-me')
     widget::dispatch('toggle')
-    document.querySelector('mig-menu /deep/ button').click()
+    document.querySelector('mig-menu /deep/ button.login').click()
     login = document.querySelector('mig-me /deep/ mig-login')
   })
   it('shows the login menu', () => {
     expect(login).to.exist
   })
   it('shows the login form', () => {
-    login.shadowRoot.querySelector('#login_iframe')::dispatch('click')
     expect(login.shadowRoot.querySelector('iframe')).to.exist
   })
   after(() => {
