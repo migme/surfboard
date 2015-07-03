@@ -6,7 +6,6 @@ cache:
   directories:
     - node_modules
 before_script: npm i -g grunt-cli gulp
-after_script: npm run codecov
 notifications:
   webhooks:
     urls:
@@ -33,6 +32,7 @@ deploy:
   on:
     repo: migme/surfboard
     tags: true
+after_success: npm run codecov
 env:
   global:
   - secure: HDpU2+5GBl73t2vrplILgmElM3h1Ccf4acPJR33jSvcPo/PRRpXQKwNeQmeF1gBFUQVjDOCT8VGbMxoQiocwLRQKJC3b+fujf6iZT/eux85BiGxrZSMjd+UhKmlPwD9BK8NzbZuJ7Ue1GS+L2pw1jV5er7Q/2B4SgS3YyYugfXiN3v6O1ZuGosXrSxfCGDfQT/6reMDnPSE7nf0f1N/7eS+/4mthwuxPxtoeARHV5Ha2syko0cjI+C6J8GSrjZmHSvZOmoE6NhYVJlp+zr7QVd/2LbthVhQSj3KbxLY6CH0Ykf0Xt9Q48Z/oOw9BNKHJ1NMCY5EzLNgH+S9jeZ3yccNSaz1lCuKYDFQwIPWID1aG8SO/gz2gVrcMTwoG+w9elazc9QWNGO5p5A5JTg3BhGoiweBpuENFX74I9TCT0azTm1yEk+o2hnyiPPJBQPRupezrb71tRNZ+MdCcYcvw4gkYglNAYrV7pqBwCjXy4X1+lw6vYIiQRZlrD74CdXIab4lF1ErtBQHHV93Y9HMX6cLBAq74uLKQW3Ogkw9B4Dry2Y8oAdo3d4QBbobTr2ul0kYAHV4bBVvWC2jR3dt8+InaCx0yrOPGT1E2SpSGissZA8V8+vDJOZ6XZTIuBgQljlN2VQ59GWfZ2EW3pcaw9SyaENMmbjSN2puDfzEY/Ko=
