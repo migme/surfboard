@@ -21,14 +21,14 @@ class Login extends HTMLElement {
       })
       .then(() => this::bubble('navigate', { tagName: 'mig-menu' }))
     const iframe = this.shadowRoot.query('iframe')
-    const header = this.shadowRoot.query('header')
+    const spinner = this.shadowRoot.query('svg g')
     iframe.setAttribute('hidden', 'hidden')
     iframe::once('load').then(() => {
-      header::once('animationiteration').then((event) => {
-        header.query('svg g').style.animationIterationCount = 1
-        header.query('svg g').style.animationName = 'fadeOut'
-        header::once('animationend').then((event) => {
-          header.remove()
+      spinner::once('animationiteration').then(() => {
+        spinner.style.animationIterationCount = 1
+        spinner.style.animationName = 'fadeOut'
+        spinner::once('animationend').then(() => {
+          spinner.closest('header').remove()
           iframe.removeAttribute('hidden')
         })
       })
