@@ -20,10 +20,14 @@ class Login extends HTMLElement {
         parent: this.shadowRoot.query('article')
       })
       .then(() => this::bubble('navigate', { tagName: 'mig-menu' }))
-    this.shadowRoot.query('iframe').setAttribute('hidden', 'hidden')
-    this.shadowRoot.query('iframe')::once('load', () => {
-      this.shadowRoot.query('header').remove()
-      this.shadowRoot.query('iframe').removeAttribute('hidden')
+    const iframe = this.shadowRoot.query('iframe')
+    const header = this.shadowRoot.query('header')
+    iframe.setAttribute('hidden', 'hidden')
+    iframe::once('load').then(() => {
+      header::once('animationiteration').then(() => {
+        header.remove()
+        iframe.removeAttribute('hidden')
+      })
     })
   }
 }
