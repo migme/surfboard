@@ -24,9 +24,13 @@ class Login extends HTMLElement {
     const header = this.shadowRoot.query('header')
     iframe.setAttribute('hidden', 'hidden')
     iframe::once('load').then(() => {
-      header::once('animationiteration').then(() => {
-        header.remove()
-        iframe.removeAttribute('hidden')
+      header::once('animationiteration').then((event) => {
+        header.query('svg g').style.animationIterationCount = 1
+        header.query('svg g').style.animationName = 'fadeOut'
+        header::once('animationend').then((event) => {
+          header.remove()
+          iframe.removeAttribute('hidden')
+        })
       })
     })
   }
