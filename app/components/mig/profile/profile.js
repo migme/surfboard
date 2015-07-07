@@ -10,12 +10,6 @@ class Profile extends HTMLElement {
     this.shadowRoot.innerHTML = html()
     insertCss(css, { parent: this.shadowRoot })
   }
-  attachedCallback () {
-    this::closest('mig-me').beachball.API.url('me')
-      .then(profile => {
-        // console.log({profile})
-      })
-  }
 }
 
 export default document.registerElement('mig-profile', Profile)
