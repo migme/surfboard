@@ -1,5 +1,4 @@
 /* global HTMLElement */
-import { closest } from 'parasol'
 import insertCss from 'insert-css'
 import html from './profile.jade'
 import css from './profile.styl'
