@@ -1,5 +1,5 @@
 /* global describe before after it expect */
-import {dispatch, once} from '../../app/utils/events'
+import {dispatch, once} from 'bubbly'
 import app from '../..' // eslint-disable-line no-unused-vars
 
 describe('mig-button', () => {

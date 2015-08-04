@@ -1,30 +1,38 @@
-/*global HTMLElement */
-import closest from '../../../utils/closest'
+/* global HTMLElement */
+import { bubble, on, once } from 'bubbly'
+import { closest } from 'parasol'
 import insertCss from 'insert-css'
 import html from './login.jade'
 import css from './login.styl'
 
 class Login extends HTMLElement {
   createdCallback () {
-    let root = this.createShadowRoot()
-    root.innerHTML = html()
+    this.createShadowRoot()
+    this.shadowRoot.innerHTML = html()
     insertCss(css, { parent: this.shadowRoot })
-
-    const options = {
-      iframe: {
-        parent: this.shadowRoot
-      }
-    }
-
-    for (let element of root.querySelectorAll('button')) {
-      element.addEventListener('click', event => {
-        const suffix = /.*_(.*)/
-        const method = event.target.id.replace(suffix, '$1')
-        const opts = options[method]
-        this::closest('mig-me').beachball
-          .Session.login(method, opts)
+    this.shadowRoot.query('button')::on('click', () => {
+      this::bubble('navigate', { tagName: 'mig-menu' })
+    })
+  }
+  attachedCallback () {
+    this::closest('mig-me').beachball
+      .Session.login('iframe', {
+        parent: this.shadowRoot.query('article')
       })
-    }
+      .then(() => this::bubble('navigate', { tagName: 'mig-menu' }))
+    const iframe = this.shadowRoot.query('iframe')
+    const spinner = this.shadowRoot.query('svg g')
+    iframe.setAttribute('hidden', 'hidden')
+    iframe::once('load').then(() => {
+      spinner::once('animationiteration').then(() => {
+        spinner.style.animationIterationCount = 1
+        spinner.style.animationName = 'fadeOut'
+        spinner::once('animationend').then(() => {
+          spinner.closest('header').remove()
+          iframe.removeAttribute('hidden')
+        })
+      })
+    })
   }
 }
 

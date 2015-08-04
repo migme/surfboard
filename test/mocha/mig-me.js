@@ -1,5 +1,5 @@
 /* global describe it expect */
-import {dispatch} from '../../app/utils/events'
+import {dispatch} from 'bubbly'
 import app from '../..' // eslint-disable-line no-unused-vars
 
 describe('mig-me', () => {

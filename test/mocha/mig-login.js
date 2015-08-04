@@ -1,6 +1,6 @@
-/* global describe before after it expect Event */
-import closest from '../../app/utils/closest'
-import {dispatch} from '../../app/utils/events'
+/* global describe before after it expect */
+import { closest } from 'parasol'
+import { dispatch } from 'bubbly'
 import app from '../..' // eslint-disable-line no-unused-vars
 
 describe('mig-login', () => {
@@ -9,15 +9,13 @@ describe('mig-login', () => {
   before(() => {
     widget = document.querySelector('mig-me')
     widget::dispatch('toggle')
-    document.querySelector('mig-menu /deep/ button').click()
+    document.querySelector('mig-menu /deep/ button.login').click()
     login = document.querySelector('mig-me /deep/ mig-login')
   })
   it('shows the login menu', () => {
     expect(login).to.exist
   })
   it('shows the login form', () => {
-    login.shadowRoot.querySelector('#login_iframe')
-      .dispatchEvent(new Event('click'))
     expect(login.shadowRoot.querySelector('iframe')).to.exist
   })
   after(() => {

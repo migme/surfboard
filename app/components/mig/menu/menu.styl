@@ -1,2 +1,30 @@
-button
-  border 10px solid gold
+$mantis = #3cb9a0
+
+h1
+  text-align center
+  font-size 0
+  margin 30px 0
+
+  svg
+    midth 150px
+    max-width 50%
+
+nav
+  text-align center
+
+  button
+    display block
+    width 200px
+    max-width calc(100% - 20px)
+    margin 20px auto
+    cursor pointer
+    padding 10px 20px
+    border-style none
+    background-color $mantis
+    color white
+    font-size 16px
+
+    &:focus
+      outline none
+    &:active
+      background-color darken($mantis, 20%)
