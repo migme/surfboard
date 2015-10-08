@@ -5,6 +5,7 @@ Widget to bring the Migme fun to web apps.
 [![Codeship](https://img.shields.io/codeship/737faef0-c964-0132-6f8a-1e9b8d507ee8.svg)](https://codeship.com/projects/75220)
 [![Travis CI](https://img.shields.io/travis/migme/surfboard.svg)](https://travis-ci.org/migme/surfboard)
 [![Codecov](https://img.shields.io/codecov/c/github/migme/surfboard.svg)](https://codecov.io/github/migme/surfboard)
+[![Dependency Status](https://gemnasium.com/migme/surfboard.svg)](https://gemnasium.com/migme/surfboard)
 [![JavaScript Standard Style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)
 [![npm](https://img.shields.io/npm/v/migme-surfboard.svg)](https://www.npmjs.com/package/migme-surfboard)
 [![npm](https://img.shields.io/npm/dm/migme-surfboard.svg)](https://www.npmjs.com/package/migme-surfboard)
